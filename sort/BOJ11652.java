@@ -26,8 +26,14 @@ public class BOJ11652 {
         for(int idx=1; idx<N; idx++){
             if(cards[idx-1]==cards[idx]){
                 currentCount++; 
+                //-1 0 0 반례 해결을 위해 추후에 리팩토링하기
+                if(maxCount<currentCount){
+                    maxCard = cards[idx-1];
+                    maxCount= currentCount;
+                }
             }
             else{
+                //-1 0 0 반례 해결을 위해 
                 if(maxCount<currentCount){
                     maxCard = cards[idx-1];
                     maxCount= currentCount;
