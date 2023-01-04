@@ -54,7 +54,7 @@ public class BOJ7576 {
     static void print2DArray(int[][] map){
         for(int[] l : map){
             for(int v : l){
-                System.out.print(" "+v);
+                System.out.print("  "+v);
             }System.out.println(); 
         }
     }
@@ -88,6 +88,7 @@ public class BOJ7576 {
         public static void main(String args[]) throws IOException{
             init();
             BFS(); 
+            print2DArray(distance);
             if(isUnetableTomato()){System.out.print(-1);}
             else{System.out.println(max-1);};
 

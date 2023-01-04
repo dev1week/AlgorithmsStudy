@@ -2,6 +2,8 @@ import java.io.*;
 
 import java.util.*;
 
+//treeset으로 바꾸면 정렬 알고리즘을 추가 구현하지 않기 때문에 더 성능이 좋아진다. 
+
 public class BOJ7785_1 {
 
     static Set people2 = new TreeSet((o1, o2) ->{
