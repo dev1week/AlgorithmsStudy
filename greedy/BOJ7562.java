@@ -8,7 +8,7 @@ public class BOJ7562 {
     static int[][] distance;
     static int[] dx = {2, 1, -1, -2, -2, -1, 1, 2};
     static int[] dy ={1, 2, 2, 1, -1, -2, -2, -1};
-    static void BFS(int startX, int startY, int Dx, int Dy){
+    static void BFS(int startX, int startY){
         Queue<int[]> que = new LinkedList<>(); 
         que.add(new int[] {startX, startY});
         distance[startX][startY] =0; 
@@ -59,8 +59,7 @@ public class BOJ7562 {
             tokens = new StringTokenizer(buffer.readLine()); 
             int destinationX = Integer.valueOf(tokens.nextToken());
             int destinationY = Integer.valueOf(tokens.nextToken());
-            BFS(startX, startY, destinationX, destinationY);
-            dMap();
+            BFS(startX, startY);
             printRes(destinationX, destinationY);
         }
     }
