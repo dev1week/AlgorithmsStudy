@@ -6,6 +6,26 @@ import java.util.*;
 public class BOJ188088 {
     public static class Sticker{
         public int[][] map; 
+
+        public void Rotate(){
+            int[][] tmp=  new int [12][12];
+            int orginalH =this.map.length;
+            int orginalW = this.map[0].length;
+            int newW = this.map.length;
+            int newH = this.map[0].length;
+            for(int x=0; x<this.map.length;x++){
+                for(int y=0; y<this.map[x].length; y++){
+                    tmp[x][y] = this.map[x][y];
+                }
+            }
+            this.map = new int[newH][newW];
+            for(int x=0; x<newH; x++){
+                for(int y=0; y<newW; y++){
+                    this.map[x][y] = tmp[orginalH-1-y][x];
+                }
+            }
+
+        }
     }
     static int[][] noteBook;
     static int H; 
@@ -13,11 +33,6 @@ public class BOJ188088 {
     static int numOfSticker; 
     static StringBuilder sb = new StringBuilder(); 
     static Sticker[] stickerList; 
-    //스티커 회전 로직 
-    static void rotate(){
-
-    }
-
     //주어진 좌표가 유효한 좌표인지 확인함 
     static boolean isOut(int x, int y){
         return x<0||y<0||x>=H||y>=W;
@@ -97,17 +112,22 @@ public class BOJ188088 {
     public static void main(String[]args) throws IOException{
         init();
         for(Sticker sticker : stickerList){
-            for(int currentX=0; currentX<H; currentX++){
-                for(int currentY=0; currentY<W; currentY++){
-                    while(isPastable(currentX, currentY, sticker.map)){
-                        //0~270까지 돌린다. 
+            sb.append("회전 전\n");
+            print2D(sticker.map);
+            sb.append("회전 후\n");
+            sticker.Rotate();
+            print2D(sticker.map);
+            // for(int currentX=0; currentX<H; currentX++){
+            //     for(int currentY=0; currentY<W; currentY++){
+            //         while(isPastable(currentX, currentY, sticker.map)){
+            //             //0~270까지 돌린다. 
                             
-                    }
-                }
-            }
+            //         }
+            //     }
+            // }
         }
         
-        
+        System.out.println(sb);
     }
     
 }
