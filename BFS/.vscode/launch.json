@@ -1,0 +1,133 @@
+{
+  // IntelliSense를 사용하여 가능한 특성에 대해 알아보세요.
+  // 기존 특성에 대한 설명을 보려면 가리킵니다.
+  // 자세한 내용을 보려면 https://go.microsoft.com/fwlink/?linkid=830387을(를) 방문하세요.
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Launch BOJ7569",
+      "request": "launch",
+      "mainClass": "BOJ7569",
+      "projectName": "BFS"
+    },
+    {
+      "type": "java",
+      "name": "Launch BOJ7569",
+      "request": "launch",
+      "mainClass": "BOJ7569",
+      "projectName": "BFS_abf9228e"
+    },
+    {
+      "type": "java",
+      "name": "Launch debug",
+      "request": "launch",
+      "mainClass": "debug",
+      "projectName": "BFS_abf9228e"
+    },
+    {
+      "type": "java",
+      "name": "Launch Current File",
+      "request": "launch",
+      "mainClass": "${file}"
+    },
+    {
+      "type": "java",
+      "name": "Launch BOJ11403",
+      "request": "launch",
+      "mainClass": "BOJ11403",
+      "projectName": "BFS_abf9228e"
+    },
+    {
+      "type": "java",
+      "name": "Launch BOJ11724",
+      "request": "launch",
+      "mainClass": "BOJ11724",
+      "projectName": "BFS_abf9228e"
+    },
+    {
+      "type": "java",
+      "name": "Launch BOJ1697",
+      "request": "launch",
+      "mainClass": "BOJ1697",
+      "projectName": "BFS_abf9228e"
+    },
+    {
+      "type": "java",
+      "name": "Launch BOJ2146",
+      "request": "launch",
+      "mainClass": "BOJ2146",
+      "projectName": "BFS_abf9228e"
+    },
+    {
+      "type": "java",
+      "name": "Launch BOJ2206",
+      "request": "launch",
+      "mainClass": "BOJ2206",
+      "projectName": "BFS_abf9228e"
+    },
+    {
+      "type": "java",
+      "name": "Launch BOJ2251",
+      "request": "launch",
+      "mainClass": "BOJ2251",
+      "projectName": "BFS_abf9228e"
+    },
+    {
+      "type": "java",
+      "name": "Launch BOJ24444",
+      "request": "launch",
+      "mainClass": "BOJ24444",
+      "projectName": "BFS_abf9228e"
+    },
+    {
+      "type": "java",
+      "name": "Launch BOJ24445",
+      "request": "launch",
+      "mainClass": "BOJ24445",
+      "projectName": "BFS_abf9228e"
+    },
+    {
+      "type": "java",
+      "name": "Launch BOJ2468",
+      "request": "launch",
+      "mainClass": "BOJ2468",
+      "projectName": "BFS_abf9228e"
+    },
+    {
+      "type": "java",
+      "name": "Launch BOJ2573",
+      "request": "launch",
+      "mainClass": "BOJ2573",
+      "projectName": "BFS_abf9228e"
+    },
+    {
+      "type": "java",
+      "name": "Launch BOJ5427",
+      "request": "launch",
+      "mainClass": "BOJ5427",
+      "projectName": "BFS_abf9228e"
+    },
+    {
+      "type": "java",
+      "name": "Launch BOJ5567",
+      "request": "launch",
+      "mainClass": "BOJ5567",
+      "projectName": "BFS_abf9228e"
+    },
+    {
+      "type": "java",
+      "name": "Launch DFS",
+      "request": "launch",
+      "mainClass": "DFS",
+      "projectName": "BFS_abf9228e"
+    },
+    {
+      "type": "java",
+      "name": "Launch test",
+      "request": "launch",
+      "mainClass": "test",
+      "projectName": "BFS_abf9228e"
+    }
+  ]
+}

@@ -42,6 +42,9 @@ public class BOJ148881_1 {
                 operations[next]++; 
                 orders[M]=0; 
                 value = tmp[M-1];
+
+                //해당 함수의 value를 건드리면 돌아나올 때 문제가 생길 수 있음 
+                //되도록 new vlaue등의 새로운 변수를 생성하여 넘겨주자 
             }
         }
     }

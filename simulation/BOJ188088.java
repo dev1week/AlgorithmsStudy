@@ -45,7 +45,6 @@ public class BOJ188088 {
                 int nextX = x+ dx;
                 int nextY = y + dy;
                 if(isOut(nextX, nextY))continue; 
-                System.out.println(nextX+" "+nextY+" "+dx+" "+dy);
                 if(noteBook[nextX][nextY]==1&&sticker[dx][dy]==1){return false;}
             }
         }
@@ -107,26 +106,43 @@ public class BOJ188088 {
             print2D(sticker.map); 
             sb.append("\n").append("\n");
         }
-
     }
     public static void main(String[]args) throws IOException{
         init();
+        //모든 스티커에 대해 
         for(Sticker sticker : stickerList){
-            sb.append("회전 전\n");
-            print2D(sticker.map);
-            sb.append("회전 후\n");
-            sticker.Rotate();
-            print2D(sticker.map);
-            // for(int currentX=0; currentX<H; currentX++){
-            //     for(int currentY=0; currentY<W; currentY++){
-            //         while(isPastable(currentX, currentY, sticker.map)){
-            //             //0~270까지 돌린다. 
-                            
-            //         }
-            //     }
-            // }
+            //노트북 왼쪽 위부터 전부 검색 
+            for(int currentX=0; currentX<H; currentX++){
+                for(int currentY=0; currentY<W; currentY++){
+                    if(isPastable(currentX, currentY, sticker.map)){
+                        paste(currentX, currentY, sticker.map);
+                        sb.append("\n").append("바로 붙이기 \n");
+                        sb.append("\n").append("---------------\n");
+                        sb.append("붙인 스티커 \n");
+                        print2D(sticker.map);
+                        sb.append("붙인 후 상태 \n");
+                        print2D(noteBook);
+                        sb.append("\n").append("---------------\n");
+                    }
+                    else{
+                        for(int rotateCnt=0; rotateCnt<3; rotateCnt++){
+                            sticker.Rotate();
+                            if(isPastable(currentX, currentY, noteBook)){
+                                sb.append("\n").append(rotateCnt+"번 돌리고붙이기 \n");
+                                paste(currentX, currentY, sticker.map);
+                                sb.append("\n").append("---------------\n");
+                                sb.append("붙인 스티커 \n");
+                                print2D(sticker.map);
+                                sb.append("붙인 후 상태 \n");
+                                print2D(noteBook);
+                                sb.append("\n").append("---------------\n");
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
         }
-        
         System.out.println(sb);
     }
     

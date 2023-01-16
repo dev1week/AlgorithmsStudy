@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*; 
 
-public class test {
+public class test3 {
     static int N; 
     static int M; 
     static boolean[] isUsed;
@@ -20,43 +20,42 @@ public class test {
         //순서를 고려안함 
         //중복 안됨 
         //순열 구하기 
-        candidates = new int[N+1];
-        isUsed = new boolean[N+1];
+        candidates = new int[N];
+        isUsed = new boolean[N];
         tokens = new StringTokenizer(buffer.readLine());
-        for(int idx=1; idx<=N; idx++){
+        for(int idx=0; idx<N; idx++){
             candidates[idx] = Integer.valueOf(tokens.nextToken());
         }
         Arrays.sort(candidates);
     }
 
 
-    static void BT(int k){
+    static void BT(int k, int start){
         if(k==M){
             for(int idx=0; idx<M; idx++){
                 sb.append(candidates[resultIdx[idx]]+" ");
             }sb.append("\n");
             return;
         }
-        int start =1; 
-        if(k>0){
-            start = resultIdx[k-1]+1; 
-        }
-        for(int idx=start; idx<=N; idx++ ){
-            if(isUsed[idx]){continue;}  
-            isUsed[idx]=true; 
+        
+        for(int idx=start; idx<N; idx++ ){
             resultIdx[k] = idx; 
-            BT(k+1);
-            isUsed[idx]=false; 
+            BT(k+1, start+1);   
+            resultIdx[k] = 0;          
         }
-
     }    
 
 
     public static void main(String[] args) throws IOException{
-        init();
-        BT(0);
-        System.out.println(sb);
+        TreeSet<Integer> tree = new TreeSet<>();
+        for(int i=1; i<9; i++){
+            tree.add(i);
+        }
+        sb.append(tree.first());
+        sb.append(tree.last());
+        System.out.println(tree);
     }
     
 }
+
 
