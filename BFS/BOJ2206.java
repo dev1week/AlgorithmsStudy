@@ -66,6 +66,8 @@ public class BOJ2206{
         return map[x][y]==1;
     }
 
+    static 
+
 
     static void BFS(){
         Queue<int[]> que = new LinkedList<>(); 
@@ -78,9 +80,11 @@ public class BOJ2206{
                 int nextX = currentX + dx[dir];
                 int nextY = currentY + dy[dir];
                 if(isNotValidated(nextX, nextY)){continue;}
-
+                if(isObstacle(nextX, nextY)){continue;}
                 if(isVisited(nextX, nextY)){continue;}
-                if()
+                if(0){
+                    
+                }
             }
 
         }

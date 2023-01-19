@@ -6,6 +6,27 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Launch BOJ1463",
+      "request": "launch",
+      "mainClass": "BOJ1463",
+      "projectName": "BFS"
+    },
+    {
+      "type": "java",
+      "name": "Launch BOJ10451",
+      "request": "launch",
+      "mainClass": "BOJ10451",
+      "projectName": "BFS"
+    },
+    {
+      "type": "java",
+      "name": "Launch BOJ2146",
+      "request": "launch",
+      "mainClass": "BOJ2146",
+      "projectName": "BFS"
+    },
+    {
+      "type": "java",
       "name": "Launch BOJ7569",
       "request": "launch",
       "mainClass": "BOJ7569",
