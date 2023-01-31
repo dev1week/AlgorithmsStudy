@@ -1,39 +1,55 @@
-import java.util.*; 
+import java.util.*;
+import java.util.Map.Entry;
 import java.io.*; 
 
 public class BOJ9375 {
-    //100
-    static int T; 
-    //의상 개수 최대 30개 
-    static int N; 
-
-    static HashMap<String, String> list = new HashMap<>(); 
+    static BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
+    static StringTokenizer tokens; 
+    static int T; // testcase 
+    static int N; // ~30 의상수 
+    //같은 종류의 의상은 하나만 입을 수 있음 
+    //(종류1 내 개수)*(종류2 내 개수)-1
     static StringBuilder sb = new StringBuilder(); 
-
-    static void init() throws IOException{
-        // 의상의 이름과 종류가 공백으로 구분되어 주어짐 
-        // 같은 종류의 의상은 하나만 
-        //H -> 모자, 터번
-        //E -> 선글라스 
-        BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer tokens = new StringTokenizer(buffer.readLine());
-        N = Integer.valueOf(tokens.nextToken());
-        for(int i=0; i<N; i++){
-            tokens = new StringTokenizer(buffer.readLine());
-            String value = tokens.nextToken();
-            String key = tokens.nextToken(); 
-            list.put(key, value); 
+    //이름, 종류를 입력으로 받음 
+    //같은 종류의 의상은 하나만 
+    static void process(){
+        int result =1; 
+        for(Integer value : closet.values()){
+            result *=(value+1); 
         }
-
-        Set set = list.entrySet();
-        Iterator it = set.iterator();
-        while(it.hasNext()){
-            
-        }
+        sb.append(result-1+"\n");
     }
 
-    public static void main(String[] args) throws IOException{
-        init();
+    static HashMap<String, Integer> closet;
+    static void init() throws NumberFormatException, IOException{
+        closet = new HashMap<>(); 
+        N = Integer.valueOf(buffer.readLine());
+        for(int i=0; i< N; i++){
+            tokens = new StringTokenizer(buffer.readLine());
+            String dummy = tokens.nextToken();
+            String name = tokens.nextToken(); 
+
+            if(closet.containsKey(name)){
+                closet.replace(name, closet.get(name)+1);
+            }else{
+                closet.put(name, 1);
+            }
+            
+
+        }
+        //종류, 개수를 넣는다. 
+        // 종류가 list 없을 경우 
+            // 종류, 1을 넣어준다. 
+        // 종류가 list에 있을 경우 
+            // 종류, 원래값 +=1 로 바꿔준다. 
+    }
+
+    public static void main(String[] args) throws NumberFormatException, IOException{
+        T = Integer.valueOf(buffer.readLine());
+        for(int t=0; t<T; t++){
+            init(); 
+            process();
+        }
         System.out.println(sb);
     }
 }
